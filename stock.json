@@ -1,0 +1,7 @@
+{
+  "stocks": [
+    { "name": "Burning Bud", "quantity": 2 },
+    { "name": "Snap Trap", "quantity": 0 },
+    { "name": "Sun Sprout", "quantity": 5 }
+  ]
+}
