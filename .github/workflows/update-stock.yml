@@ -2,7 +2,7 @@ name: Update Stock
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # Every 15 minutes
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -28,6 +28,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Clean untracked files
+        run: |
+          git clean -fd
+          git reset --hard
 
       - name: Pull latest changes
         run: git pull --rebase

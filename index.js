@@ -15,7 +15,8 @@ async function getStock() {
     });
 
     // Wait 7 seconds to allow full data to load
-    await page.waitForTimeout(7000);
+    await new Promise(r => setTimeout(r, 5000));
+
 
     const stocks = await page.evaluate(() => {
       const items = [];
