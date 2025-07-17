@@ -6,33 +6,28 @@ on:
   workflow_dispatch:
 
 jobs:
-  update-stock:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Install Google Chrome
-        run: |
-          sudo apt update
-          sudo apt install -y google-chrome-stable
+      - uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Run index.js to fetch stock
+      - name: Run scraper
         run: node index.js
 
-      - name: Commit and push updated stock.json
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add stock.json
-          git commit -m "🤖 Auto-update stock.json" || echo "No changes to commit"
+          git commit -m "chore: update stock data" || echo "No changes to commit"
+          git pull --rebase
           git push
