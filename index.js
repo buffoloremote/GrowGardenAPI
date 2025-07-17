@@ -6,6 +6,7 @@ async function getStock() {
     headless: "new",
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
+
   const page = await browser.newPage();
 
   try {
@@ -14,7 +15,7 @@ async function getStock() {
       timeout: 60000,
     });
 
-    // Simulate a delay to allow the stock data to appear
+    // ✅ Replace waitForTimeout with working delay
     await new Promise(resolve => setTimeout(resolve, 5000));
 
     await page.waitForSelector(".grid", { timeout: 15000 });
