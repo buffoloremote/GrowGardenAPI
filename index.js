@@ -9,12 +9,16 @@ async function getStock() {
   const page = await browser.newPage();
 
   try {
-    await page.goto("https://theriagames.com/guide/grow-a-garden-stock-tracker", {
-      waitUntil: "domcontentloaded",
-      timeout: 30000,
+    // Load the Grow a Garden stock tracker page
+    await page.goto('https://theriagames.com/guide/grow-a-garden-stock-tracker', {
+      waitUntil: 'networkidle0',
+      timeout: 60000
     });
 
-    // Extract data from item cards
+    // Wait for product grid to appear (not just the table)
+    await page.waitForSelector("div.grid > div", { timeout: 15000 });
+
+    // Scrape the stock items
     const stocks = await page.evaluate(() => {
       const items = [];
       document.querySelectorAll("div.grid > div").forEach((card) => {
@@ -23,15 +27,13 @@ async function getStock() {
         const quantity = parseInt(quantityText.replace("x", ""), 10);
 
         if (name && quantity > 0) {
-          items.push({
-            name,
-            quantity,
-          });
+          items.push({ name, quantity });
         }
       });
       return items;
     });
 
+    // Save to stock.json
     fs.writeFileSync("stock.json", JSON.stringify({ stocks }, null, 2));
     console.log("✅ Saved to stock.json:", stocks);
   } catch (err) {
