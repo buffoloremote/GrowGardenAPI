@@ -1,11 +1,13 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
 const fs = require("fs");
 
 async function getStock() {
   const browser = await puppeteer.launch({
     headless: "new",
+    executablePath: "/usr/bin/google-chrome", // GitHub Actions path
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
+
   const page = await browser.newPage();
 
   // Block ads and images
@@ -25,10 +27,8 @@ async function getStock() {
     });
 
     const stock = await page.$eval("pre", (el) => JSON.parse(el.textContent));
-
     console.log("✅ STOCKS:", stock);
 
-    // Save to stock.json
     fs.writeFileSync("stock.json", JSON.stringify(stock, null, 2));
     console.log("✅ Saved to stock.json");
   } catch (err) {
@@ -39,5 +39,4 @@ async function getStock() {
   }
 }
 
-getStock(); // Run immediately if this script is executed
-
+getStock();

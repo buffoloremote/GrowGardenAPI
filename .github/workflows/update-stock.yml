@@ -13,6 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install Google Chrome
+        run: |
+          sudo apt update
+          sudo apt install -y google-chrome-stable
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -20,9 +25,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Install Puppeteer Chromium
-        run: node -e "require('puppeteer').createBrowserFetcher().download('chrome')"
 
       - name: Run index.js to fetch stock
         run: node index.js
@@ -34,5 +36,3 @@ jobs:
           git add stock.json
           git commit -m "🤖 Auto-update stock.json" || echo "No changes to commit"
           git push
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
