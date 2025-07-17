@@ -4,27 +4,20 @@ const fs = require("fs");
 async function getStock() {
   const browser = await puppeteer.launch({
     headless: "new",
-    args: ["--no-sandbox", "--disable-setuid-sandbox"]
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
 
   try {
-    await page.goto("https://theriagames.com/guide/grow-a-garden-stock-tracker", {
-      waitUntil: "domcontentloaded",
-      timeout: 60000
+    await page.goto('https://theriagames.com/guide/grow-a-garden-stock-tracker', {
+      waitUntil: 'networkidle2',
+      timeout: 60000,
     });
 
-    // Simulate user activity to trigger stock table load
-    await page.evaluate(() => {
-      window.focus();
-    });
+    // Simulate a delay to allow the stock data to appear
+    await new Promise(resolve => setTimeout(resolve, 5000));
 
-    await page.mouse.move(100, 100);
-    await page.mouse.wheel({ deltaY: 100 });
-    await page.waitForTimeout(5000); // Give time for site JS to react
-
-    // Wait for table container (if it loads)
-    await page.waitForSelector(".grid", { timeout: 10000 });
+    await page.waitForSelector(".grid", { timeout: 15000 });
 
     const stocks = await page.evaluate(() => {
       const items = [];
@@ -39,6 +32,10 @@ async function getStock() {
       });
       return items;
     });
+
+    if (stocks.length === 0) {
+      throw new Error("No stock items found – page may not have fully loaded.");
+    }
 
     fs.writeFileSync("stock.json", JSON.stringify({ stocks }, null, 2));
     console.log("✅ Saved to stock.json:", stocks);
