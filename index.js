@@ -1,36 +1,39 @@
-const puppeteer = require("puppeteer-core");
+const puppeteer = require("puppeteer");
 const fs = require("fs");
 
 async function getStock() {
   const browser = await puppeteer.launch({
     headless: "new",
-    executablePath: "/usr/bin/google-chrome", // GitHub Actions path
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
-
   const page = await browser.newPage();
 
-  // Block ads and images
-  await page.setRequestInterception(true);
-  page.on("request", (request) => {
-    if (request.url().includes("ads") || request.resourceType() === "image") {
-      request.abort();
-    } else {
-      request.continue();
-    }
-  });
-
   try {
-    await page.goto("https://growagardenpro.com/stock", {
-      waitUntil: "networkidle2",
+    await page.goto("https://theriagames.com/guide/grow-a-garden-stock-tracker", {
+      waitUntil: "domcontentloaded",
       timeout: 30000,
     });
 
-    const stock = await page.$eval("pre", (el) => JSON.parse(el.textContent));
-    console.log("✅ STOCKS:", stock);
+    // Extract data from item cards
+    const stocks = await page.evaluate(() => {
+      const items = [];
+      document.querySelectorAll("div.grid > div").forEach((card) => {
+        const name = card.querySelector("h3")?.innerText.trim();
+        const quantityText = card.innerText.match(/x\d+/)?.[0] || "x0";
+        const quantity = parseInt(quantityText.replace("x", ""), 10);
 
-    fs.writeFileSync("stock.json", JSON.stringify(stock, null, 2));
-    console.log("✅ Saved to stock.json");
+        if (name && quantity > 0) {
+          items.push({
+            name,
+            quantity,
+          });
+        }
+      });
+      return items;
+    });
+
+    fs.writeFileSync("stock.json", JSON.stringify({ stocks }, null, 2));
+    console.log("✅ Saved to stock.json:", stocks);
   } catch (err) {
     console.error("❌ Error:", err);
     fs.writeFileSync("stock.json", JSON.stringify({ error: "Failed to fetch stock data" }, null, 2));
