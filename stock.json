@@ -13,6 +13,10 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
+      "name": "Orange Tulip",
+      "image": "https://api.joshlei.com/v2/growagarden/image/orange_tulip"
+    },
+    {
       "name": "Tomato",
       "image": "https://api.joshlei.com/v2/growagarden/image/tomato"
     },
@@ -53,8 +57,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
-      "name": "Paradise Egg",
-      "image": "https://api.joshlei.com/v2/growagarden/image/paradise_egg"
+      "name": "Common Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
       "name": "Common Egg",
@@ -65,8 +69,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/sign_crate"
     },
     {
-      "name": "Dark Stone Pillar",
-      "image": "https://api.joshlei.com/v2/growagarden/image/dark_stone_pillar"
+      "name": "Water Trough",
+      "image": "https://api.joshlei.com/v2/growagarden/image/water_trough"
     },
     {
       "name": "Medium Stone Table",
@@ -77,8 +81,12 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/small_wood_flooring"
     },
     {
-      "name": "Water Trough",
-      "image": "https://api.joshlei.com/v2/growagarden/image/water_trough"
+      "name": "Small Stone Table",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_table"
+    },
+    {
+      "name": "Dark Stone Pillar",
+      "image": "https://api.joshlei.com/v2/growagarden/image/dark_stone_pillar"
     },
     {
       "name": "Small Path Tile",
@@ -87,10 +95,6 @@
     {
       "name": "Red Hammock",
       "image": "https://api.joshlei.com/v2/growagarden/image/red_hammock"
-    },
-    {
-      "name": "Small Stone Table",
-      "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_table"
     },
     {
       "name": "Bookshelf",
