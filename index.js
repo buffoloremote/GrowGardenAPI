@@ -16,20 +16,19 @@ async function getStock() {
       timeout: 60000,
     });
 
-    // Replace waitForTimeout with native delay
-    await new Promise(resolve => setTimeout(resolve, 10000)); // 10 seconds
-
-    await page.waitForSelector("div.grid", { timeout: 20000 });
+    await page.waitForSelector("table.table-striped", { timeout: 30000 });
 
     const stocks = await page.evaluate(() => {
       const items = [];
-      document.querySelectorAll("div.grid > div").forEach((card) => {
-        const name = card.querySelector("h3")?.innerText.trim();
-        const quantityText = card.innerText.match(/x\d+/)?.[0] || "x0";
-        const quantity = parseInt(quantityText.replace("x", ""), 10);
-
-        if (name && quantity > 0) {
-          items.push({ name, quantity });
+      const rows = document.querySelectorAll("table.table-striped tbody tr");
+      rows.forEach((row) => {
+        const cols = row.querySelectorAll("td");
+        if (cols.length >= 2) {
+          const name = cols[0].innerText.trim();
+          const quantity = parseInt(cols[1].innerText.replace("x", ""), 10);
+          if (name && quantity > 0) {
+            items.push({ name, quantity });
+          }
         }
       });
       return items;
