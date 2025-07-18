@@ -5,12 +5,12 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
     },
     {
-      "name": "Strawberry",
-      "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
+      "name": "Bamboo",
+      "image": "https://api.joshlei.com/v2/growagarden/image/bamboo"
     },
     {
-      "name": "Watermelon",
-      "image": "https://api.joshlei.com/v2/growagarden/image/watermelon"
+      "name": "Strawberry",
+      "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
       "name": "Tomato",
@@ -29,12 +29,16 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
-      "name": "Watering Can",
-      "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
-    },
-    {
       "name": "Recall Wrench",
       "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
+    },
+    {
+      "name": "Basic Sprinkler",
+      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
+    },
+    {
+      "name": "Watering Can",
+      "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
     },
     {
       "name": "Favorite Tool",
@@ -45,8 +49,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/harvest_tool"
     },
     {
-      "name": "Mythical Egg",
-      "image": "https://api.joshlei.com/v2/growagarden/image/mythical_egg"
+      "name": "Common Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
       "name": "Common Egg",
