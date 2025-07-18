@@ -6,9 +6,11 @@ puppeteer.use(StealthPlugin());
 
 async function getStock() {
   const browser = await puppeteer.launch({
-    headless: true,
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+  headless: "new",
+  channel: "chrome", // tells puppeteer-core to use installed Chrome
+  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+});
+
 
   const page = await browser.newPage();
 
