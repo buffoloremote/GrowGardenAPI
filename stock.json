@@ -5,16 +5,12 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
     },
     {
-      "name": "Bamboo",
-      "image": "https://api.joshlei.com/v2/growagarden/image/bamboo"
-    },
-    {
       "name": "Strawberry",
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
-      "name": "Watermelon",
-      "image": "https://api.joshlei.com/v2/growagarden/image/watermelon"
+      "name": "Coconut",
+      "image": "https://api.joshlei.com/v2/growagarden/image/coconut"
     },
     {
       "name": "Tomato",
@@ -33,28 +29,32 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
     },
     {
-      "name": "Recall Wrench",
-      "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
+      "name": "Magnifying Glass",
+      "image": "https://api.joshlei.com/v2/growagarden/image/magnifying_glass"
     },
     {
-      "name": "Trowel",
-      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
+      "name": "Harvest Tool",
+      "image": "https://api.joshlei.com/v2/growagarden/image/harvest_tool"
+    },
+    {
+      "name": "Recall Wrench",
+      "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
     },
     {
       "name": "Basic Sprinkler",
       "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
     },
     {
-      "name": "Favorite Tool",
-      "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
-    },
-    {
       "name": "Watering Can",
       "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
     },
     {
-      "name": "Harvest Tool",
-      "image": "https://api.joshlei.com/v2/growagarden/image/harvest_tool"
+      "name": "Favorite Tool",
+      "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
+    },
+    {
+      "name": "Trowel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
       "name": "Common Egg",
