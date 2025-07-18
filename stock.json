@@ -5,8 +5,20 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
     },
     {
+      "name": "Mango",
+      "image": "https://api.joshlei.com/v2/growagarden/image/mango"
+    },
+    {
       "name": "Strawberry",
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
+    },
+    {
+      "name": "Watermelon",
+      "image": "https://api.joshlei.com/v2/growagarden/image/watermelon"
+    },
+    {
+      "name": "Orange Tulip",
+      "image": "https://api.joshlei.com/v2/growagarden/image/orange_tulip"
     },
     {
       "name": "Tomato",
