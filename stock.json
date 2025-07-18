@@ -13,6 +13,10 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
+      "name": "Pumpkin",
+      "image": "https://api.joshlei.com/v2/growagarden/image/pumpkin"
+    },
+    {
       "name": "Tomato",
       "image": "https://api.joshlei.com/v2/growagarden/image/tomato"
     },
@@ -21,20 +25,20 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/blueberry"
     },
     {
+      "name": "Advanced Sprinkler",
+      "image": "https://api.joshlei.com/v2/growagarden/image/advanced_sprinkler"
+    },
+    {
       "name": "Cleaning Spray",
       "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
     },
     {
+      "name": "Medium Toy",
+      "image": "https://api.joshlei.com/v2/growagarden/image/medium_toy"
+    },
+    {
       "name": "Trowel",
       "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
-    },
-    {
-      "name": "Recall Wrench",
-      "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
-    },
-    {
-      "name": "Basic Sprinkler",
-      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
     },
     {
       "name": "Watering Can",
@@ -43,6 +47,10 @@
     {
       "name": "Favorite Tool",
       "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
+    },
+    {
+      "name": "Recall Wrench",
+      "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
     },
     {
       "name": "Harvest Tool",
