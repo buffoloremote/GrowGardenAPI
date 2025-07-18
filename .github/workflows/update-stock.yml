@@ -1,22 +1,22 @@
-name: Update Stock
+name: Update stock.json
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: "*/15 * * * *" # every 15 minutes
   workflow_dispatch:
 
 jobs:
-  update-stock:
+  update:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 18
 
       - name: Install dependencies
         run: npm install
@@ -24,21 +24,11 @@ jobs:
       - name: Run scraper
         run: node index.js
 
-      - name: Configure Git
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-
-      - name: Clean untracked files
-        run: |
-          git clean -fd
-          git reset --hard
-
-      - name: Pull latest changes
-        run: git pull --rebase
-
-      - name: Commit and push if stock.json changed
-        run: |
           git add stock.json
           git commit -m "🤖 Auto-update stock.json" || echo "No changes to commit"
+          git pull --rebase
           git push

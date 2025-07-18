@@ -1,3 +1,100 @@
 {
-  "stocks": []
+  "stocks": [
+    {
+      "name": "Carrot",
+      "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
+    },
+    {
+      "name": "Corn",
+      "image": "https://api.joshlei.com/v2/growagarden/image/corn"
+    },
+    {
+      "name": "Strawberry",
+      "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
+    },
+    {
+      "name": "Tomato",
+      "image": "https://api.joshlei.com/v2/growagarden/image/tomato"
+    },
+    {
+      "name": "Blueberry",
+      "image": "https://api.joshlei.com/v2/growagarden/image/blueberry"
+    },
+    {
+      "name": "Cleaning Spray",
+      "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
+    },
+    {
+      "name": "Trowel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
+    },
+    {
+      "name": "Recall Wrench",
+      "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
+    },
+    {
+      "name": "Basic Sprinkler",
+      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
+    },
+    {
+      "name": "Watering Can",
+      "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
+    },
+    {
+      "name": "Favorite Tool",
+      "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
+    },
+    {
+      "name": "Harvest Tool",
+      "image": "https://api.joshlei.com/v2/growagarden/image/harvest_tool"
+    },
+    {
+      "name": "Common Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
+    },
+    {
+      "name": "Paradise Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/paradise_egg"
+    },
+    {
+      "name": "Common Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
+    },
+    {
+      "name": "Sign Crate",
+      "image": "https://api.joshlei.com/v2/growagarden/image/sign_crate"
+    },
+    {
+      "name": "Dark Stone Pillar",
+      "image": "https://api.joshlei.com/v2/growagarden/image/dark_stone_pillar"
+    },
+    {
+      "name": "Medium Stone Table",
+      "image": "https://api.joshlei.com/v2/growagarden/image/medium_stone_table"
+    },
+    {
+      "name": "Small Wood Flooring",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_wood_flooring"
+    },
+    {
+      "name": "Water Trough",
+      "image": "https://api.joshlei.com/v2/growagarden/image/water_trough"
+    },
+    {
+      "name": "Small Path Tile",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_path_tile"
+    },
+    {
+      "name": "Red Hammock",
+      "image": "https://api.joshlei.com/v2/growagarden/image/red_hammock"
+    },
+    {
+      "name": "Small Stone Table",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_table"
+    },
+    {
+      "name": "Bookshelf",
+      "image": "https://api.joshlei.com/v2/growagarden/image/bookshelf"
+    }
+  ]
 }
