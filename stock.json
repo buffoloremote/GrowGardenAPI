@@ -9,6 +9,10 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
+      "name": "Watermelon",
+      "image": "https://api.joshlei.com/v2/growagarden/image/watermelon"
+    },
+    {
       "name": "Tomato",
       "image": "https://api.joshlei.com/v2/growagarden/image/tomato"
     },
@@ -17,12 +21,12 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/blueberry"
     },
     {
-      "name": "Magnifying Glass",
-      "image": "https://api.joshlei.com/v2/growagarden/image/magnifying_glass"
-    },
-    {
       "name": "Cleaning Spray",
       "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
+    },
+    {
+      "name": "Trowel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
       "name": "Watering Can",
@@ -35,14 +39,6 @@
     {
       "name": "Favorite Tool",
       "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
-    },
-    {
-      "name": "Basic Sprinkler",
-      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
-    },
-    {
-      "name": "Trowel",
-      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
       "name": "Harvest Tool",
