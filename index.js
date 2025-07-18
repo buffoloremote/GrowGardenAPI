@@ -16,10 +16,9 @@ async function getStock() {
       timeout: 60000,
     });
 
-    // Wait manually for dynamic content to appear
-    await page.waitForTimeout(10000); // 10 seconds
+    // Replace waitForTimeout with native delay
+    await new Promise(resolve => setTimeout(resolve, 10000)); // 10 seconds
 
-    // Then wait for .grid container
     await page.waitForSelector("div.grid", { timeout: 20000 });
 
     const stocks = await page.evaluate(() => {
