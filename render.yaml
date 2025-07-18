@@ -1,8 +1,6 @@
-services:
-  - type: background
-    name: growgarden-stock-scraper
+cron:
+  - name: growgarden-stock-scraper
+    schedule: "*/1 * * * *"  # every 1 minute
+    command: node index.js
     env: node
     plan: free
-    buildCommand: npm install
-    startCommand: node index.js
-    schedule: "*/1 * * * *"  # every 1 minute
