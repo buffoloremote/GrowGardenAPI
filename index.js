@@ -1,7 +1,11 @@
 const puppeteer = require("puppeteer");
 
 async function getStock() {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+  headless: true,
+  executablePath: process.env.PUPPETEER_EXECUTABLE_PATH
+});
+
   const page = await browser.newPage();
 
   console.log("🌱 Navigating to page...");
