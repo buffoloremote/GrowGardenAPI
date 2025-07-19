@@ -13,8 +13,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
-      "name": "Pumpkin",
-      "image": "https://api.joshlei.com/v2/growagarden/image/pumpkin"
+      "name": "Dragon Fruit",
+      "image": "https://api.joshlei.com/v2/growagarden/image/dragon_fruit"
     },
     {
       "name": "Tomato",
@@ -25,20 +25,16 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/blueberry"
     },
     {
-      "name": "Advanced Sprinkler",
-      "image": "https://api.joshlei.com/v2/growagarden/image/advanced_sprinkler"
-    },
-    {
       "name": "Cleaning Spray",
       "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
     },
     {
-      "name": "Medium Toy",
-      "image": "https://api.joshlei.com/v2/growagarden/image/medium_toy"
+      "name": "Magnifying Glass",
+      "image": "https://api.joshlei.com/v2/growagarden/image/magnifying_glass"
     },
     {
-      "name": "Trowel",
-      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
+      "name": "Recall Wrench",
+      "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
     },
     {
       "name": "Watering Can",
@@ -49,8 +45,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
     },
     {
-      "name": "Recall Wrench",
-      "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
+      "name": "Trowel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
       "name": "Harvest Tool",
@@ -73,36 +69,36 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/sign_crate"
     },
     {
-      "name": "Dark Stone Pillar",
-      "image": "https://api.joshlei.com/v2/growagarden/image/dark_stone_pillar"
+      "name": "Green Tractor",
+      "image": "https://api.joshlei.com/v2/growagarden/image/green_tractor"
     },
     {
-      "name": "Small Path Tile",
-      "image": "https://api.joshlei.com/v2/growagarden/image/small_path_tile"
+      "name": "Small Stone Lantern",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_lantern"
     },
     {
       "name": "Rake",
       "image": "https://api.joshlei.com/v2/growagarden/image/rake"
     },
     {
-      "name": "Hay Bale",
-      "image": "https://api.joshlei.com/v2/growagarden/image/hay_bale"
+      "name": "Log Bench",
+      "image": "https://api.joshlei.com/v2/growagarden/image/log_bench"
     },
     {
-      "name": "Medium Circle Tile",
-      "image": "https://api.joshlei.com/v2/growagarden/image/medium_circle_tile"
+      "name": "Small Path Tile",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_path_tile"
     },
     {
-      "name": "Brown Stone Pillar",
-      "image": "https://api.joshlei.com/v2/growagarden/image/brown_stone_pillar"
+      "name": "Log",
+      "image": "https://api.joshlei.com/v2/growagarden/image/log"
     },
     {
-      "name": "Mini TV",
-      "image": "https://api.joshlei.com/v2/growagarden/image/mini_tv"
+      "name": "Round Metal Arbour",
+      "image": "https://api.joshlei.com/v2/growagarden/image/round_metal_arbour"
     },
     {
-      "name": "Brown Bench",
-      "image": "https://api.joshlei.com/v2/growagarden/image/brown_bench"
+      "name": "Rock Pile",
+      "image": "https://api.joshlei.com/v2/growagarden/image/rock_pile"
     }
   ]
 }
