@@ -5,6 +5,14 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
     },
     {
+      "name": "Corn",
+      "image": "https://api.joshlei.com/v2/growagarden/image/corn"
+    },
+    {
+      "name": "Bamboo",
+      "image": "https://api.joshlei.com/v2/growagarden/image/bamboo"
+    },
+    {
       "name": "Strawberry",
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
@@ -49,44 +57,44 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
-      "name": "Common Summer Egg",
-      "image": "https://api.joshlei.com/v2/growagarden/image/common_summer_egg"
+      "name": "Common Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
-      "name": "Sign Crate",
-      "image": "https://api.joshlei.com/v2/growagarden/image/sign_crate"
+      "name": "Beach Crate",
+      "image": "https://api.joshlei.com/v2/growagarden/image/beach_crate"
     },
     {
-      "name": "Green Tractor",
-      "image": "https://api.joshlei.com/v2/growagarden/image/green_tractor"
+      "name": "Compost Bin",
+      "image": "https://api.joshlei.com/v2/growagarden/image/compost_bin"
     },
     {
-      "name": "Log",
-      "image": "https://api.joshlei.com/v2/growagarden/image/log"
+      "name": "Stone Lantern",
+      "image": "https://api.joshlei.com/v2/growagarden/image/stone_lantern"
     },
     {
-      "name": "Rake",
-      "image": "https://api.joshlei.com/v2/growagarden/image/rake"
-    },
-    {
-      "name": "Log Bench",
-      "image": "https://api.joshlei.com/v2/growagarden/image/log_bench"
-    },
-    {
-      "name": "Small Path Tile",
-      "image": "https://api.joshlei.com/v2/growagarden/image/small_path_tile"
+      "name": "Orange Umbrella",
+      "image": "https://api.joshlei.com/v2/growagarden/image/orange_umbrella"
     },
     {
       "name": "Small Stone Lantern",
       "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_lantern"
     },
     {
-      "name": "Round Metal Arbour",
-      "image": "https://api.joshlei.com/v2/growagarden/image/round_metal_arbour"
+      "name": "Campfire",
+      "image": "https://api.joshlei.com/v2/growagarden/image/campfire"
     },
     {
-      "name": "Rock Pile",
-      "image": "https://api.joshlei.com/v2/growagarden/image/rock_pile"
+      "name": "Long Stone Table",
+      "image": "https://api.joshlei.com/v2/growagarden/image/long_stone_table"
+    },
+    {
+      "name": "Brown Stone Pillar",
+      "image": "https://api.joshlei.com/v2/growagarden/image/brown_stone_pillar"
+    },
+    {
+      "name": "Shovel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/shovel"
     }
   ]
 }
