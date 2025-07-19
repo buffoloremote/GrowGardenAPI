@@ -21,16 +21,12 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
     },
     {
-      "name": "Trowel",
-      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
+      "name": "Magnifying Glass",
+      "image": "https://api.joshlei.com/v2/growagarden/image/magnifying_glass"
     },
     {
       "name": "Recall Wrench",
       "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
-    },
-    {
-      "name": "Basic Sprinkler",
-      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
     },
     {
       "name": "Watering Can",
@@ -39,6 +35,10 @@
     {
       "name": "Favorite Tool",
       "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
+    },
+    {
+      "name": "Trowel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
       "name": "Harvest Tool",
@@ -57,36 +57,36 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
-      "name": "Beach Crate",
-      "image": "https://api.joshlei.com/v2/growagarden/image/beach_crate"
-    },
-    {
       "name": "Sign Crate",
       "image": "https://api.joshlei.com/v2/growagarden/image/sign_crate"
     },
     {
-      "name": "Log Bench",
-      "image": "https://api.joshlei.com/v2/growagarden/image/log_bench"
+      "name": "Medium Stone Table",
+      "image": "https://api.joshlei.com/v2/growagarden/image/medium_stone_table"
     },
     {
-      "name": "Stone Lantern",
-      "image": "https://api.joshlei.com/v2/growagarden/image/stone_lantern"
+      "name": "Small Wood Table",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_wood_table"
     },
     {
-      "name": "Orange Umbrella",
-      "image": "https://api.joshlei.com/v2/growagarden/image/orange_umbrella"
+      "name": "Yellow Umbrella",
+      "image": "https://api.joshlei.com/v2/growagarden/image/yellow_umbrella"
     },
     {
-      "name": "Campfire",
-      "image": "https://api.joshlei.com/v2/growagarden/image/campfire"
+      "name": "Hay Bale",
+      "image": "https://api.joshlei.com/v2/growagarden/image/hay_bale"
     },
     {
-      "name": "Medium Wood Flooring",
-      "image": "https://api.joshlei.com/v2/growagarden/image/medium_wood_flooring"
+      "name": "Medium Circle Tile",
+      "image": "https://api.joshlei.com/v2/growagarden/image/medium_circle_tile"
     },
     {
-      "name": "Small Stone Table",
-      "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_table"
+      "name": "Shovel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/shovel"
+    },
+    {
+      "name": "Round Metal Arbour",
+      "image": "https://api.joshlei.com/v2/growagarden/image/round_metal_arbour"
     },
     {
       "name": "Bookshelf",
