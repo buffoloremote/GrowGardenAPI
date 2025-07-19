@@ -9,10 +9,6 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
-      "name": "Orange Tulip",
-      "image": "https://api.joshlei.com/v2/growagarden/image/orange_tulip"
-    },
-    {
       "name": "Tomato",
       "image": "https://api.joshlei.com/v2/growagarden/image/tomato"
     },
@@ -25,12 +21,16 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
     },
     {
-      "name": "Magnifying Glass",
-      "image": "https://api.joshlei.com/v2/growagarden/image/magnifying_glass"
+      "name": "Trowel",
+      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
       "name": "Recall Wrench",
       "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
+    },
+    {
+      "name": "Basic Sprinkler",
+      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
     },
     {
       "name": "Watering Can",
@@ -39,10 +39,6 @@
     {
       "name": "Favorite Tool",
       "image": "https://api.joshlei.com/v2/growagarden/image/favorite_tool"
-    },
-    {
-      "name": "Trowel",
-      "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
       "name": "Harvest Tool",
@@ -69,24 +65,24 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/compost_bin"
     },
     {
-      "name": "Stone Lantern",
-      "image": "https://api.joshlei.com/v2/growagarden/image/stone_lantern"
+      "name": "Small Stone Lantern",
+      "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_lantern"
     },
     {
       "name": "Orange Umbrella",
       "image": "https://api.joshlei.com/v2/growagarden/image/orange_umbrella"
     },
     {
-      "name": "Small Stone Lantern",
-      "image": "https://api.joshlei.com/v2/growagarden/image/small_stone_lantern"
+      "name": "Long Stone Table",
+      "image": "https://api.joshlei.com/v2/growagarden/image/long_stone_table"
     },
     {
       "name": "Campfire",
       "image": "https://api.joshlei.com/v2/growagarden/image/campfire"
     },
     {
-      "name": "Long Stone Table",
-      "image": "https://api.joshlei.com/v2/growagarden/image/long_stone_table"
+      "name": "Stone Lantern",
+      "image": "https://api.joshlei.com/v2/growagarden/image/stone_lantern"
     },
     {
       "name": "Brown Stone Pillar",
