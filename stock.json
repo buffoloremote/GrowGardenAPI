@@ -5,10 +5,6 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
     },
     {
-      "name": "Corn",
-      "image": "https://api.joshlei.com/v2/growagarden/image/corn"
-    },
-    {
       "name": "Strawberry",
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
@@ -17,16 +13,16 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/pumpkin"
     },
     {
-      "name": "Orange Tulip",
-      "image": "https://api.joshlei.com/v2/growagarden/image/orange_tulip"
-    },
-    {
       "name": "Tomato",
       "image": "https://api.joshlei.com/v2/growagarden/image/tomato"
     },
     {
       "name": "Blueberry",
       "image": "https://api.joshlei.com/v2/growagarden/image/blueberry"
+    },
+    {
+      "name": "Medium Toy",
+      "image": "https://api.joshlei.com/v2/growagarden/image/medium_toy"
     },
     {
       "name": "Cleaning Spray",
