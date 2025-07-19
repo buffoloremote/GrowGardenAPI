@@ -9,6 +9,10 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
+      "name": "Orange Tulip",
+      "image": "https://api.joshlei.com/v2/growagarden/image/orange_tulip"
+    },
+    {
       "name": "Tomato",
       "image": "https://api.joshlei.com/v2/growagarden/image/tomato"
     },
@@ -25,12 +29,16 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
-      "name": "Watering Can",
-      "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
-    },
-    {
       "name": "Recall Wrench",
       "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
+    },
+    {
+      "name": "Basic Sprinkler",
+      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
+    },
+    {
+      "name": "Watering Can",
+      "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
     },
     {
       "name": "Favorite Tool",
@@ -49,8 +57,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
-      "name": "Common Summer Egg",
-      "image": "https://api.joshlei.com/v2/growagarden/image/common_summer_egg"
+      "name": "Common Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
       "name": "Beach Crate",
