@@ -5,20 +5,12 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
     },
     {
-      "name": "Bamboo",
-      "image": "https://api.joshlei.com/v2/growagarden/image/bamboo"
-    },
-    {
       "name": "Strawberry",
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
     },
     {
-      "name": "Daffodil",
-      "image": "https://api.joshlei.com/v2/growagarden/image/daffodil"
-    },
-    {
-      "name": "Orange Tulip",
-      "image": "https://api.joshlei.com/v2/growagarden/image/orange_tulip"
+      "name": "Mushroom",
+      "image": "https://api.joshlei.com/v2/growagarden/image/mushroom"
     },
     {
       "name": "Tomato",
@@ -61,8 +53,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
-      "name": "Bug Egg",
-      "image": "https://api.joshlei.com/v2/growagarden/image/bug_egg"
+      "name": "Paradise Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/paradise_egg"
     },
     {
       "name": "Sign Crate",
