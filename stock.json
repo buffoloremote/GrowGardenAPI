@@ -5,12 +5,16 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/carrot"
     },
     {
-      "name": "Bamboo",
-      "image": "https://api.joshlei.com/v2/growagarden/image/bamboo"
+      "name": "Corn",
+      "image": "https://api.joshlei.com/v2/growagarden/image/corn"
     },
     {
       "name": "Strawberry",
       "image": "https://api.joshlei.com/v2/growagarden/image/strawberry"
+    },
+    {
+      "name": "Watermelon",
+      "image": "https://api.joshlei.com/v2/growagarden/image/watermelon"
     },
     {
       "name": "Orange Tulip",
@@ -25,10 +29,6 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/blueberry"
     },
     {
-      "name": "Advanced Sprinkler",
-      "image": "https://api.joshlei.com/v2/growagarden/image/advanced_sprinkler"
-    },
-    {
       "name": "Cleaning Spray",
       "image": "https://api.joshlei.com/v2/growagarden/image/cleaning_spray"
     },
@@ -37,12 +37,16 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/trowel"
     },
     {
-      "name": "Watering Can",
-      "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
-    },
-    {
       "name": "Recall Wrench",
       "image": "https://api.joshlei.com/v2/growagarden/image/recall_wrench"
+    },
+    {
+      "name": "Basic Sprinkler",
+      "image": "https://api.joshlei.com/v2/growagarden/image/basic_sprinkler"
+    },
+    {
+      "name": "Watering Can",
+      "image": "https://api.joshlei.com/v2/growagarden/image/watering_can"
     },
     {
       "name": "Favorite Tool",
@@ -61,8 +65,8 @@
       "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
     },
     {
-      "name": "Common Egg",
-      "image": "https://api.joshlei.com/v2/growagarden/image/common_egg"
+      "name": "Common Summer Egg",
+      "image": "https://api.joshlei.com/v2/growagarden/image/common_summer_egg"
     },
     {
       "name": "Beach Crate",
