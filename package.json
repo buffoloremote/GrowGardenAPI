@@ -1,12 +1,12 @@
 {
   "name": "growgardenapi",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "node node_modules/puppeteer/install.js"
   },
   "dependencies": {
-    "puppeteer": "^24.1.0"
+    "puppeteer": "^24.1.1"
   }
 }
