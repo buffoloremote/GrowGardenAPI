@@ -1,7 +1,7 @@
 const fs = require('fs');
 const { chromium } = require('playwright');
 
-async function getStock() {
+async function scrapeStock() {
   const browser = await chromium.launch({ headless: true });
   const page = await browser.newPage();
 
@@ -11,8 +11,7 @@ async function getStock() {
     timeout: 60000,
   });
 
-  // Give JS time to render the elements
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(3000); // give JS time to load
 
   console.log('📊 Scraping stock data...');
   const stocks = await page.evaluate(() => {
@@ -28,9 +27,23 @@ async function getStock() {
   });
 
   fs.writeFileSync('stock.json', JSON.stringify({ stocks }, null, 2));
-  console.log('✅ Saved stock.json with', stocks.length, 'items.');
+  console.log(`✅ Saved ${stocks.length} items to stock.json`);
 
   await browser.close();
 }
 
-getStock();
+// 🔁 Refresh every 5 minutes (300,000 ms)
+async function loop() {
+  while (true) {
+    try {
+      await scrapeStock();
+    } catch (err) {
+      console.error('❌ Scraping error:', err);
+    }
+
+    console.log('⏳ Waiting 5 minutes before next scrape...');
+    await new Promise(res => setTimeout(res, 5 * 60 * 1000));
+  }
+}
+
+loop();
