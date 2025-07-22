@@ -4,57 +4,69 @@ const path = require('path');
 
 const STOCK_URL = 'https://elvebredd.com/grow-a-garden-stock';
 const OUTPUT_FILE = path.join(__dirname, 'stock.json');
-const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
+const REFRESH_INTERVAL_MINUTES = 5;
 
-let lastStockData = null;
+let previousStock = [];
 
 async function scrapeStock() {
-  try {
-    const browser = await chromium.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.goto(STOCK_URL, { waitUntil: 'domcontentloaded' });
+  const browser = await chromium.launch({ headless: true });
+  const page = await browser.newPage();
+  await page.goto(STOCK_URL, { waitUntil: 'domcontentloaded' });
 
-    const stockData = await page.evaluate(() => {
-      const data = [];
+  const stockData = await page.evaluate(() => {
+    const data = [];
+    const productRows = document.querySelectorAll('.flex.flex-wrap > div');
 
-      document.querySelectorAll('.product-card').forEach(card => {
-        const name = card.querySelector('h2, h3, h1')?.textContent?.trim() || 'Unnamed';
-        const qtyMatch = card.textContent.match(/(\d+)\s*(left|remaining|available|in stock)/i);
-        const quantity = qtyMatch ? parseInt(qtyMatch[1]) : null;
+    productRows.forEach(row => {
+      const name = row.querySelector('h2')?.textContent.trim();
+      const quantityText = row.querySelector('p')?.textContent || '';
+      const quantityMatch = quantityText.match(/(\d+)/);
+      const quantity = quantityMatch ? parseInt(quantityMatch[1]) : 0;
+
+      if (name) {
         data.push({ name, quantity });
-      });
-
-      return data;
+      }
     });
 
-    await browser.close();
+    return data;
+  });
 
-    const changed = JSON.stringify(stockData) !== JSON.stringify(lastStockData);
+  await browser.close();
+  return stockData;
+}
 
-    if (changed) {
-      lastStockData = stockData;
+function stocksAreEqual(a, b) {
+  return JSON.stringify(a) === JSON.stringify(b);
+}
 
-      const output = {
-        updatedAt: new Date().toISOString(),
-        nextRefreshInMinutes: REFRESH_INTERVAL_MS / 60000,
-        stock: stockData
-      };
+async function saveStockToFile(stock) {
+  const payload = {
+    updatedAt: new Date().toISOString(),
+    nextRefreshInMinutes: REFRESH_INTERVAL_MINUTES,
+    stock
+  };
 
-      fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
-      console.log(`✅ Updated stock.json at ${new Date().toLocaleTimeString()}`);
-    } else {
-      console.log(`⏸ No change in stock at ${new Date().toLocaleTimeString()}`);
-    }
-  } catch (error) {
-    console.error('❌ Scraping error:', error);
-  }
+  fs.writeFileSync(OUTPUT_FILE, JSON.stringify(payload, null, 2));
 }
 
 async function loop() {
   while (true) {
-    await scrapeStock();
-    console.log(`⏳ Waiting ${REFRESH_INTERVAL_MS / 60000} minutes before checking again...\n`);
-    await new Promise(resolve => setTimeout(resolve, REFRESH_INTERVAL_MS));
+    try {
+      const stock = await scrapeStock();
+
+      if (!stocksAreEqual(stock, previousStock)) {
+        await saveStockToFile(stock);
+        previousStock = stock;
+        console.log(`✅ Updated stock.json at ${new Date().toLocaleTimeString()} with ${stock.length} items`);
+      } else {
+        console.log(`⏸ No change in stock at ${new Date().toLocaleTimeString()}`);
+      }
+    } catch (error) {
+      console.error('❌ Scraping error:', error);
+    }
+
+    console.log(`⏳ Waiting ${REFRESH_INTERVAL_MINUTES} minutes before checking again...\n`);
+    await new Promise(res => setTimeout(res, REFRESH_INTERVAL_MINUTES * 60 * 1000));
   }
 }
 
