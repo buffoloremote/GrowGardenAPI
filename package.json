@@ -3,12 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js",
-  "postinstall": "npx playwright install"
-},
-
-
+    "start": "node index.js",
+    "postinstall": "echo 'playwright installed locally'"
+  },
   "dependencies": {
-    "playwright": "^1.54.1"
+    "playwright": "1.43.1"
   }
 }
