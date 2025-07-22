@@ -1,48 +1,63 @@
-const fs = require('fs');
 const { chromium } = require('playwright');
+const fs = require('fs');
+const path = require('path');
+
+const STOCK_URL = 'https://elvebredd.com/grow-a-garden-stock';
+const OUTPUT_FILE = path.join(__dirname, 'stock.json');
+const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes in ms
+
+let lastStockSnapshot = null;
 
 async function scrapeStock() {
-  const browser = await chromium.launch({ headless: true });
-  const page = await browser.newPage();
+  try {
+    const browser = await chromium.launch({ headless: true });
+    const page = await browser.newPage();
+    await page.goto(STOCK_URL, { waitUntil: 'domcontentloaded' });
 
-  console.log('🌱 Navigating to stock page...');
-  await page.goto('https://elvebredd.com/grow-a-garden-stock', {
-    waitUntil: 'domcontentloaded',
-    timeout: 60000,
-  });
+    // Get both item names and quantities if available
+    const stockData = await page.evaluate(() => {
+      const data = [];
+      const containers = document.querySelectorAll('.product, .stock-item, .stock-entry');
 
-  await page.waitForTimeout(3000); // give JS time to load
+      containers.forEach(el => {
+        const name = el.querySelector('h1, h2, h3, p')?.textContent?.trim();
+        const quantityMatch = el.textContent.match(/(\d+)\s*(available|in stock)/i);
+        const quantity = quantityMatch ? parseInt(quantityMatch[1]) : null;
 
-  console.log('📊 Scraping stock data...');
-  const stocks = await page.evaluate(() => {
-    const results = [];
-    document.querySelectorAll('.stock').forEach(section => {
-      section.querySelectorAll('.item').forEach(item => {
-        const name = item.querySelector('p')?.innerText?.trim();
-        const img = item.querySelector('img')?.src;
-        if (name && img) results.push({ name, image: img });
+        if (name) {
+          data.push({ name, quantity });
+        }
       });
+
+      return data;
     });
-    return results;
-  });
 
-  fs.writeFileSync('stock.json', JSON.stringify({ stocks }, null, 2));
-  console.log(`✅ Saved ${stocks.length} items to stock.json`);
-
-  await browser.close();
-}
-
-// 🔁 Refresh every 5 minutes (300,000 ms)
-async function loop() {
-  while (true) {
-    try {
-      await scrapeStock();
-    } catch (err) {
-      console.error('❌ Scraping error:', err);
+    // Only update file if stock has changed
+    const stockChanged = JSON.stringify(stockData) !== JSON.stringify(lastStockSnapshot);
+    if (stockChanged) {
+      lastStockSnapshot = stockData;
+      const output = {
+        updatedAt: new Date().toISOString(),
+        nextRefreshInMinutes: 5,
+        stock: stockData,
+      };
+      fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
+      console.log(`✅ Updated stock.json at ${new Date().toLocaleTimeString()}`);
+    } else {
+      console.log(`⏸ No change in stock at ${new Date().toLocaleTimeString()}`);
     }
 
-    console.log('⏳ Waiting 5 minutes before next scrape...');
-    await new Promise(res => setTimeout(res, 5 * 60 * 1000));
+    await browser.close();
+  } catch (error) {
+    console.error('❌ Scraping error:', error);
+  }
+}
+
+async function loop() {
+  while (true) {
+    await scrapeStock();
+    console.log('⏳ Waiting 5 minutes before checking again...\n');
+    await new Promise(resolve => setTimeout(resolve, REFRESH_INTERVAL));
   }
 }
 

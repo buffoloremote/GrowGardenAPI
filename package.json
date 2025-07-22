@@ -1,12 +1,13 @@
 {
   "name": "growgardenapi",
   "version": "1.0.0",
+  "description": "Scrape Grow a Garden stock and output JSON",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "postinstall": "echo 'playwright installed locally'"
+    "postinstall": "npx playwright install chromium"
   },
   "dependencies": {
-    "playwright": "1.43.1"
+    "playwright": "^1.44.0"
   }
 }
