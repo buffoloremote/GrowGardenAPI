@@ -4,9 +4,9 @@ const path = require('path');
 
 const STOCK_URL = 'https://elvebredd.com/grow-a-garden-stock';
 const OUTPUT_FILE = path.join(__dirname, 'stock.json');
-const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes in ms
+const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 
-let lastStockSnapshot = null;
+let lastStockData = null;
 
 async function scrapeStock() {
   try {
@@ -14,40 +14,37 @@ async function scrapeStock() {
     const page = await browser.newPage();
     await page.goto(STOCK_URL, { waitUntil: 'domcontentloaded' });
 
-    // Get both item names and quantities if available
     const stockData = await page.evaluate(() => {
       const data = [];
-      const containers = document.querySelectorAll('.product, .stock-item, .stock-entry');
 
-      containers.forEach(el => {
-        const name = el.querySelector('h1, h2, h3, p')?.textContent?.trim();
-        const quantityMatch = el.textContent.match(/(\d+)\s*(available|in stock)/i);
-        const quantity = quantityMatch ? parseInt(quantityMatch[1]) : null;
-
-        if (name) {
-          data.push({ name, quantity });
-        }
+      document.querySelectorAll('.product-card').forEach(card => {
+        const name = card.querySelector('h2, h3, h1')?.textContent?.trim() || 'Unnamed';
+        const qtyMatch = card.textContent.match(/(\d+)\s*(left|remaining|available|in stock)/i);
+        const quantity = qtyMatch ? parseInt(qtyMatch[1]) : null;
+        data.push({ name, quantity });
       });
 
       return data;
     });
 
-    // Only update file if stock has changed
-    const stockChanged = JSON.stringify(stockData) !== JSON.stringify(lastStockSnapshot);
-    if (stockChanged) {
-      lastStockSnapshot = stockData;
+    await browser.close();
+
+    const changed = JSON.stringify(stockData) !== JSON.stringify(lastStockData);
+
+    if (changed) {
+      lastStockData = stockData;
+
       const output = {
         updatedAt: new Date().toISOString(),
-        nextRefreshInMinutes: 5,
-        stock: stockData,
+        nextRefreshInMinutes: REFRESH_INTERVAL_MS / 60000,
+        stock: stockData
       };
+
       fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
       console.log(`✅ Updated stock.json at ${new Date().toLocaleTimeString()}`);
     } else {
       console.log(`⏸ No change in stock at ${new Date().toLocaleTimeString()}`);
     }
-
-    await browser.close();
   } catch (error) {
     console.error('❌ Scraping error:', error);
   }
@@ -56,8 +53,8 @@ async function scrapeStock() {
 async function loop() {
   while (true) {
     await scrapeStock();
-    console.log('⏳ Waiting 5 minutes before checking again...\n');
-    await new Promise(resolve => setTimeout(resolve, REFRESH_INTERVAL));
+    console.log(`⏳ Waiting ${REFRESH_INTERVAL_MS / 60000} minutes before checking again...\n`);
+    await new Promise(resolve => setTimeout(resolve, REFRESH_INTERVAL_MS));
   }
 }
 
